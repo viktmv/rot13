@@ -2,28 +2,16 @@
 'use strict'
 
 function rot13(str) { 
-  let upperStr = str.toUpperCase()
-    , result = []
+  return Array.from(str.toUpperCase(), char => {
+    let code = char.charCodeAt()
+    if (code < 65) return char
 
-  upperStr.split('').forEach(function(v, i) {
-    let charCode = upperStr.charCodeAt(i)
-
-    if (charCode < 65)
-        return result.push(newChar(charCode))    
-   
-    else if (charCode <= 77 )
-        return result.push(newChar(charCode + 13)) 
-    
-    return result.push(newChar(charCode - 13) )
-  })  
-  return result.join('');
-}
-
-function newChar(character) {
-    return String.fromCharCode(character)
+    return String.fromCharCode(code > 77
+      ? code - 13
+      : code + 13
+    )
+  }).join('')
 }
 
 // Change the inputs below to test
 rot13("OYNPX FURRC JNYY");
-
-
