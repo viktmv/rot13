@@ -4,8 +4,7 @@
 function rot13(str) { 
   let result = []
 
-  str.split('').forEach(function(v, i) 
-  {
+  str.split('').forEach(function(v, i) {
     let charCode = str.charCodeAt(i)
 
     if (charCode < 65)
