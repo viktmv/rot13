@@ -11,7 +11,7 @@ function rot13(str) {
         return result.push(newChar(charCode))    
    
     else if (charCode <= 77 )
-        return result.push((newChar(charCode + 13)) 
+        return result.push(newChar(charCode + 13)) 
     
     return result.push(newChar(charCode - 13) )
   })  
